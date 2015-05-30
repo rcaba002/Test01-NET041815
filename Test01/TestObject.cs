@@ -20,7 +20,7 @@ namespace Test01
 
         internal List<int> RemovesDuplicateElements(List<int> input)
         {
-            return input.GroupBy(x => x).Where(x => x.Count() < 2).Select(x => x.Key).ToList();
+            return input.GroupBy(x => x).Select(x => x.Key).ToList();
         }
 
         internal List<int> ReturnsFirstFiveItems(List<int> input)
