@@ -7,9 +7,26 @@ namespace Test01
 {
     class TestObject
     {
-        internal List<int> Reduce(List<int> input)
+        internal List<int> LessThanFour(List<int> input)
         {
-            throw new NotImplementedException();
+            List<int>temp = input.Where(x => x >= 4).ToList();
+            return temp;
         }
+        internal List<int> MoreThanTen(List<int> input)
+        {
+            List<int>temp = input.Where(x => x < 10).ToList();
+            return temp;
+        }
+        internal List<int> Duplicates(List<int> input)
+        {
+            List<int> temp = input.GroupBy(x => x).Select(y => y.First()).ToList();
+            return temp;
+        }
+        internal List<int> ReturnFirsFive(List<int> input)
+        {
+            List<int> temp = input.Take(5).ToList();
+            return temp;
+        }
+        
     }
 }
