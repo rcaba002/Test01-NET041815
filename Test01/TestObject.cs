@@ -8,6 +8,11 @@ namespace Test01
 {
     class TestObject
     {
+        internal List<int> Reduce(List<int> input)
+        {
+            return input.Where(x => x >= 4 && x < 10).Distinct().Take(5).ToList();
+        }
+
         internal List<int> ReduceLessThanFour(List<int> input)
         {
             return input.Where(x => x >= 4).Select(x => x).ToList();
